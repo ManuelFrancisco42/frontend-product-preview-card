@@ -5,19 +5,41 @@ Import Parcials
 */
 /* 
 ==============
-Generals Rules
+Variables
 ==============
 */
-/* Colors */
-/* Primary */
-/*  Neutral */
-/* Typography */
-/* Fonts Montserrat */
-/* Fonts Fraunces */
+:root {
+  /* Colors */
+  /* Primary */
+  --primary-color-dark-cyan: hsl(158, 36%, 37%);
+  --primary-color-very-dark-cyan: hsl(158, 90%, 16%); /* For the hover focus effect I change this color to a darker */
+  --secondary-color-cream: hsl(30, 38%, 92%);
+  /*  Neutral */
+  --neutral-color-very-dark-blue: hsl(212, 21%, 14%);
+  --neutral-color-dark-grayish-blue: hsl(228, 12%, 48%);
+  --neutral-color-white: hsl(0, 0%, 100%);
+  /* Typography */
+  /* Google Fonts */
+  --fontfamilyfraunces: "Fraunces", serif;
+  --fontfamilymontserrat: "Montserrat", sans-serif;
+  --fontweight-regular: 500;
+  --fontweight-bold: 700;
+  /* Space */
+  --content-space-padding: 1.8rem;
+  --content-space-space: 1rem;
+}
+
+/* 
+==============
+Reset Rules
+==============
+*/
 /*
   1. Use a more-intuitive box-sizing model.
 */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -26,6 +48,7 @@ Generals Rules
 */
 * {
   margin: 0;
+  padding: 0;
 }
 
 /*
@@ -46,7 +69,11 @@ html {
 /*
   5. Improve media defaults
 */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
@@ -54,34 +81,134 @@ img, picture, video, canvas, svg {
 /*
   6. Remove built-in form typography styles
 */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
 /*
   7. Avoid text overflows
 */
-p, h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
+  line-height: 1;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
-/*
-  8. Create a root stacking context
-*/
-#root, #__next {
-  isolation: isolate;
+/* Alignment Utilities */
+.align-flex {
+  display: flex;
+  gap: 1.8rem;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 /* 
+==============
+Generals Rules
+==============
+*/
+body {
+  display: grid;
+  place-content: center;
+  margin: 1rem;
+  font-family: var(--fontfamilymontserrat);
+  font-weight: var(--fontweight-regular);
+  font-size: 0.875;
+  background-color: var(--secondary-color-cream);
+  color: var(--neutral-color-dark-grayish-blue);
+}
+
+/* 
+==============
+Content Rules
+==============
+*/
+.product {
+  background-color: var(--neutral-color-white);
+  border-radius: 0.3rem;
+  margin-top: 8.4375rem;
+  overflow: hidden;
+  max-width: 800px;
+}
+.product__content {
+  padding: var(--content-space-padding);
+  display: grid;
+  gap: var(--content-space-space);
+}
+.product__content .btn {
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  gap: 0.4rem;
+  height: 5rem;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 0.2rem 1.5rem;
+  background-color: var(--primary-color-dark-cyan);
+  color: var(--neutral-color-white);
+  font-weight: var(--fontweight-bold);
+  font-size: 1.3rem;
+}
+.product__content .btn__icon {
+  margin-right: 0.5rem;
+  width: 16px;
+  height: 16px;
+}
+.product__content .btn:is(:hover, :focus) {
+  background-color: var(--primary-color-very-dark-cyan);
+}
+.product__type {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 0.812;
+}
+.product__title {
+  font-size: 3rem;
+  font-family: var(--fontfamilyfraunces);
+  color: var(--neutral-color-very-dark-blue);
+}
+.product__price-solde {
+  font-size: 3rem;
+  font-weight: var(--fontweight-bold);
+  font-family: var(--fontfamilyfraunces);
+  color: var(--primary-color-dark-cyan);
+}
+
+/*
 ==============
 Footer Rules
 ==============
 */
 .attribution {
+  margin-top: 3rem;
   font-size: 11px;
   text-align: center;
 }
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 768px) {
+  .product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    --content-space-space: 1rem;
+  }
+  .align-flex {
+    margin-top: -9rem;
+  }
 }

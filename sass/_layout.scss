@@ -1,16 +1,96 @@
-
+/* 
+==============
+Generals Rules
+==============
+*/
+body {
+  display: grid;
+  place-content: center;
+  margin: 1rem;
+  font-family: var(--fontfamilymontserrat);
+  font-weight: var(--fontweight-regular);
+  font-size: 0.875;
+  background-color: var(--secondary-color-cream);
+  color: var(--neutral-color-dark-grayish-blue);
+}
 
 /* 
+==============
+Content Rules
+==============
+*/
+
+.product {
+  background-color: var(--neutral-color-white);
+  border-radius: 0.3rem;
+  margin-top: 8.4375rem;
+  overflow: hidden;
+  max-width: 800px;
+
+  &__content {
+    padding: var(--content-space-padding);
+    display: grid;
+    gap: var(--content-space-space);
+
+    .btn {
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      gap: 0.4rem;
+      height: 5rem;
+      justify-content: center;
+      align-items: center;
+
+
+      border: 0;
+      border-radius: 0.5rem;
+      padding: 0.2rem 1.5rem;
+      background-color: var(--primary-color-dark-cyan);
+      color: var(--neutral-color-white);
+      font-weight: var(--fontweight-bold);
+      font-size: 1.3rem;
+
+      &__icon {
+        margin-right: 0.5rem;
+        width: 16px;
+        height: 16px;
+      }
+    }
+    .btn:is(:hover, :focus) {
+      background-color: var(--primary-color-very-dark-cyan);
+    }
+  }
+
+  &__type {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-size: 0.812;
+  }
+  &__title {
+    font-size: 3rem;
+    font-family: var(--fontfamilyfraunces);
+    color: var(--neutral-color-very-dark-blue);
+  }
+
+  &__price-solde {
+    font-size: 3rem;
+    font-weight: var(--fontweight-bold);
+    font-family: var(--fontfamilyfraunces);
+    color: var(--primary-color-dark-cyan);
+  }
+}
+
+/*
 ==============
 Footer Rules
 ==============
 */
-
 .attribution {
-    font-size: 11px;
-    text-align: center;
-  }
-  
-  .attribution a {
-    color: hsl(228, 45%, 44%);
-  }
+  margin-top: 3rem;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

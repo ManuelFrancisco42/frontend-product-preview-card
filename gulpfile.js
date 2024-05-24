@@ -8,7 +8,6 @@ const browserSync = require("browser-sync").create();
 
 
 
-
 // To compile SASS
 gulp.task("sass", () => {
     return gulp.src("sass/main.scss")

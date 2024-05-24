@@ -1,0 +1,14 @@
+
+@media (min-width: 768px) {
+    .product{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      --content-space-space: 1rem;
+     
+    }
+    .align-flex {
+        margin-top: -9rem;
+    }
+  }
+  
+  
