@@ -1,0 +1,39 @@
+/* 
+==============
+Import Parcials
+==============
+*/
+/* 
+==============
+Generals Rules
+==============
+*/
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  font-size: 1.4rem;
+}
+
+/* 
+==============
+Footer Rules
+==============
+*/
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
