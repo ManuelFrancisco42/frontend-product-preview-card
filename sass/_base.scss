@@ -3,20 +3,91 @@
 Generals Rules
 ==============
 */
-*, 
-::after,
-::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+ /* Colors */
+
+/* Primary */
+
+$primary-color-dark-cyan: hsl(158, 36%, 37%);
+$primary-color-cream: hsl(30, 38%, 92%);
+
+/*  Neutral */
+
+$neutral-color-very-dark-blue: hsl(212, 21%, 14%);
+$neutral-color-dark-grayish-blue: hsl(228, 12%, 48%);
+$neutral-color-white: hsl(0, 0%, 100%);
+
+/* Typography */
+
+  /* Fonts Montserrat */
+$fontfamilymontserrat: "Montserrat", sans-serif;
+$fontweightmontserrat-01: 500;
+$fontweightmontserrat-02: 700;
+
+
+/* Fonts Fraunces */
+ 
+$fontfamilyfraunces: "Fraunces", serif;
+$fontweightsfraunces: 700;
+
+
+
+
+
+
+
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
 html {
   font-size: 62.5%; /* 1rem = 10px */
 }
 
-body {
-  font-size: 1.4rem;
-}
 
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
 
